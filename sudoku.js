@@ -186,7 +186,16 @@ var Sudoku = {
 			backmenu : function () {
 				document.getElementById("menu").style.display="block";
 				document.getElementById("game").style.display= "none";
+				document.getElementById("rule").style.display="none";
+
 	
+			},
+			
+			rule : function () {
+				document.getElementById("rule").style.display="block";
+				document.getElementById("game").style.display= "none";
+				document.getElementById("menu").style.display="none";
+
 			},
 			
 			myListenerEvent : function (element,callback) {
@@ -202,5 +211,7 @@ var Sudoku = {
 				Sudoku.myListenerEvent("medium",Sudoku.mediumgame);
 				Sudoku.myListenerEvent("hard",Sudoku.hardgame);
 				Sudoku.myListenerEvent("backmenu",Sudoku.backmenu);
+				Sudoku.myListenerEvent("rules",Sudoku.rule);
+
 			},
 	};

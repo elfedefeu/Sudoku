@@ -1,6 +1,6 @@
 body {
 	margin:0;	
-	
+	font-family: Comic Sans MS;
 }
 
 
@@ -15,21 +15,25 @@ body {
 	
 }
 
+span {
+	display:inline-block;	
+}
+
 .top {
-	border-top:3px solid black;	
+	//border-top:3px solid black;	
 	
 }
 
 .line {
 	border-bottom:1px solid grey;
-	border-left:3px solid black;	
+	//border-left:3px solid black;	
 	width:476px;
 	height:50px;
 	
 }
 
 .bottom > span {
-	border-bottom:2px solid black;	
+	//border-bottom:2px solid black;	
 }
 
 .carre {
@@ -41,10 +45,22 @@ body {
   	height: -webkit-calc(100%/8.5);
 	height: calc(100%/8.5);*/
 }
-#game{
+#game,#rule{
 	width:476px;
 	margin:auto;
 	display:none;	
+}
+
+#game {
+	border:2px solid black;	
+}
+
+#rule {
+	margin-top: 50px;
+}
+.title {
+	font-size: 3em;
+    text-align: center;	
 }
 
 #menu {
@@ -54,15 +70,15 @@ body {
 }
 
 .lastline {
-	border-bottom:3px solid black;	
+	//border-bottom:3px solid black;	
 }
-.lastcarre {
+/*.lastcarre {
 	border-right:3px solid black;	
-}
+}*/
 
 .firstcarre {
-	border-left:3px solid black;
-	margin-left:-4px;
+	//border-left:3px solid black;
+	//margin-left:-5px;
 }
 
 @media all and (max-width: 500px) {
