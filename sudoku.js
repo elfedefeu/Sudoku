@@ -1,6 +1,7 @@
 var Sudoku = {
 	
 		nb_case_vide:"",
+		grillefinal:"",
 	
 		shuffle : function (array)
 			{
@@ -126,6 +127,7 @@ var Sudoku = {
 		
 				if (grille_complete)
 				{
+					grillefinal=grille;
 					var cases_a_vider = new Array();
 					for (var i = 1; i <= 81; i++)
 					{
@@ -141,7 +143,8 @@ var Sudoku = {
 							var cases = i+"-"+j;
 							count++;
 							var el = document.getElementById(cases);
-							el.innerHTML = cases_a_vider[count] ? "" : grille[i][j];
+							el.value = cases_a_vider[count] ? "" : grille[i][j];
+							el.readOnly = cases_a_vider[count] ? false : true;
 							var classe = cases_a_vider[count] ? "empty" : "full";
 							el.classList.add(classe);
 						}	
@@ -149,17 +152,8 @@ var Sudoku = {
 		
 				}
 				
-				
-				
-				/*else
-				{
-					var today = new Date;
-		
-					document.getElementById("resultat").style.display = 'none';
-					document.getElementById("erreur").style.display = 'block';
-					document.getElementById("erreur").innerHTML = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds() + " : Echec apr&egrave;s " + nb_max_loop + " tentatives.";
-				}*/
 			},
+			
 			init : function () {
 				Sudoku.generate();
 				document.getElementById("menu").style.display="none";
@@ -196,6 +190,39 @@ var Sudoku = {
 				document.getElementById("game").style.display= "none";
 				document.getElementById("menu").style.display="none";
 
+			},
+			
+			checkNum : function(element) {
+				
+				var valeur = element.value;
+				var reg = new RegExp("^[0-9]$");
+				if(!reg.test(valeur))
+				{
+					element.value=null;
+				}
+				
+			},
+			
+			checkRes : function() {
+				var same=true;
+				boucle : for (var i = 1; i <= 9; i++) {
+						 	for (var j = 1; j<= 9; j++) {
+						 		var cases = i+"-"+j;
+								var valeur = document.getElementById(cases).value;
+								if(grillefinal[i][j] != valeur) {
+										same=false;
+										break boucle;
+								}
+							}	
+						}
+				if(same) {
+					alert("bravo");	
+				}
+				else {
+					alert("bouh");
+				}
+				
+				
 			},
 			
 			myListenerEvent : function (element,callback) {

@@ -12,56 +12,56 @@ body {
 
 .empty {
 	background-color:white;	
+	text-align:center;
 	
 }
 
-span {
-	display:inline-block;	
-}
-
-.top {
-	//border-top:3px solid black;	
-	
-}
 
 .line {
 	border-bottom:1px solid grey;
-	//border-left:3px solid black;	
-	width:476px;
+	width:450px;
 	height:50px;
 	
 }
 
-.bottom > span {
-	//border-bottom:2px solid black;	
-}
 
 .carre {
-	border:1px solid grey;
+	border:solid solid none solid;
+	border-width:1px;
+	border-color:grey;
 	display:inline-block;
 	width:50px;
 	height:50px;
-	/*height: -moz-calc(100%/8.5);
-  	height: -webkit-calc(100%/8.5);
-	height: calc(100%/8.5);*/
+	
 }
-#game,#rule{
-	width:476px;
+
+#game,#rule {
+	display:none;
+
+}
+
+#valid {
+	display:block;	
+margin:auto;
+}
+
+#plateform,#rule,#valid{
+	width:450px;
 	margin:auto;
-	display:none;	
-}
-
-#game {
-	border:2px solid black;	
-}
-
-#rule {
 	margin-top: 50px;
+	
 }
+
+#plateform {
+	border:3px solid black;	
+}
+
 .title {
 	font-size: 3em;
     text-align: center;	
 }
+
+
 
 #menu {
 	width:200px;
@@ -70,11 +70,11 @@ span {
 }
 
 .lastline {
-	//border-bottom:3px solid black;	
+	border-bottom:3px solid black;	
 }
-/*.lastcarre {
+.lastcarre {
 	border-right:3px solid black;	
-}*/
+}
 
 .firstcarre {
 	//border-left:3px solid black;
